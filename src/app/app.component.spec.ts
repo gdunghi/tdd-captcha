@@ -10,23 +10,35 @@ describe('AppComponent', () => {
   }));
 
   describe("Captcha", () => {
-    describe("First pattern left operand", () => {
+    describe("First pattern", () => {
 
-      it("test 1 should be 1", async(() => {
-        const component = TestBed.createComponent(AppComponent);
+      describe("left operand", () => {
+        it("test 1 should be 1", async(() => {
+          const component = TestBed.createComponent(AppComponent);
 
-        let leftOperandResult = component.componentInstance.captcha(1, 1);
+          let captcha = component.componentInstance.captcha(1, 1, 1, 1);
 
-        expect(leftOperandResult).toEqual("1");
-      }));
+          expect(captcha.leftOperand).toEqual("1");
+        }));
 
-      it("test 2 should be 2", async(() => {
-        const component = TestBed.createComponent(AppComponent);
+        it("test 2 should be 2", async(() => {
+          const component = TestBed.createComponent(AppComponent);
 
-        let leftOperandResult = component.componentInstance.captcha(1, 2);
+          let captcha = component.componentInstance.captcha(1, 2, 1, 1);
 
-        expect(leftOperandResult).toEqual("2");
-      }));
+          expect(captcha.leftOperand).toEqual("2");
+        }));
+      });
+
+      describe("right operand", () => {
+        it("test 1 shuld be one", async(() => {
+          const component = TestBed.createComponent(AppComponent);
+
+          let captcha = component.componentInstance.captcha(1, 2, 1, 1);
+
+          expect(captcha.rightOperand).toEqual("one");
+        }));
+      });
 
     });
 
@@ -34,20 +46,18 @@ describe('AppComponent', () => {
       it("test 1 should be one", async(() => {
         const component = TestBed.createComponent(AppComponent);
 
-        let leftOperandResult = component.componentInstance.captcha(2, 1);
+        let captcha = component.componentInstance.captcha(2, 1, 1, 1);
 
-        expect(leftOperandResult).toEqual("one");
+        expect(captcha.leftOperand).toEqual("one");
       }));
 
       it("test 2 should be two", async(() => {
         const component = TestBed.createComponent(AppComponent);
 
-        let leftOperandResult = component.componentInstance.captcha(2, 2);
+        let captcha = component.componentInstance.captcha(2, 2, 1, 1);
 
-        expect(leftOperandResult).toEqual("two");
+        expect(captcha.leftOperand).toEqual("two");
       }));
-
-
     });
 
   });

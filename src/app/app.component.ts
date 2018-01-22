@@ -11,7 +11,14 @@ export class AppComponent {
   captcha = (pattern: number, leftOperand: number): string => {
     if (pattern === 1) {
       return leftOperand + "";
+    } else if (pattern === 2) {
+      let result = "";
+      if (leftOperand === 1) {
+        result = "one";
+      } else if (leftOperand === 2) {
+        result = "two";
+      }
+      return result;
     }
-    return "";
   }
 }

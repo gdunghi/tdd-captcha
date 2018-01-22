@@ -9,6 +9,9 @@ export class AppComponent {
   title = 'app';
 
   captcha = (pattern: number, leftOperand: number): string => {
-    return "1";
+    if (pattern === 1) {
+      return leftOperand + "";
+    }
+    return "";
   }
 }

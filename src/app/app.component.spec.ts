@@ -11,12 +11,20 @@ describe('AppComponent', () => {
 
   describe("Captcha first pattern left operand", () => {
 
-    it("should return 1 when left opernd is 1", async(() => {
+    it("test 1 should be 1", async(() => {
       const component = TestBed.createComponent(AppComponent);
 
       let leftOperandResult = component.componentInstance.captcha(1, 1);
 
       expect(leftOperandResult).toEqual("1");
+    }));
+
+    it("test 2 should be 2", async(() => {
+      const component = TestBed.createComponent(AppComponent);
+
+      let leftOperandResult = component.componentInstance.captcha(1, 2);
+
+      expect(leftOperandResult).toEqual("2");
     }));
 
   });

@@ -38,6 +38,22 @@ describe('AppComponent', () => {
 
           expect(captcha.rightOperand).toEqual("one");
         }));
+
+        it("test 2 should be two", async(() => {
+          const component = TestBed.createComponent(AppComponent);
+
+          let captcha = component.componentInstance.captcha(1, 2, 1, 2);
+
+          expect(captcha.rightOperand).toEqual("two");
+        }));
+
+        it("test 3 should be three", async(() => {
+          const component = TestBed.createComponent(AppComponent);
+
+          let captcha = component.componentInstance.captcha(1, 2, 1, 3);
+
+          expect(captcha.rightOperand).toEqual("three");
+        }));
       });
 
     });

@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  captcha = (pattern: number, leftOperand: number): string => {
+    return "1";
+  }
 }

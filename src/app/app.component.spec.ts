@@ -116,7 +116,32 @@ describe('AppComponent', () => {
 
     });
 
+    describe("Operand", () => {
+      it("should return plus when operand is 1", () => {
+        const component = TestBed.createComponent(AppComponent);
+        let opernad = component.componentInstance.operand(1);
+        expect(opernad).toEqual("+")
+      });
 
+      it("should return minus when operand is 2", () => {
+        const component = TestBed.createComponent(AppComponent);
+        let opernad = component.componentInstance.operand(2);
+        expect(opernad).toEqual("-")
+      });
+
+      it("should return multiply when operand is 3", () => {
+        const component = TestBed.createComponent(AppComponent);
+        let opernad = component.componentInstance.operand(3);
+        expect(opernad).toEqual("*")
+      });
+
+      it("should return divide when operand is 4", () => {
+        const component = TestBed.createComponent(AppComponent);
+        let opernad = component.componentInstance.operand(4);
+        expect(opernad).toEqual("/")
+      });
+      
+    });
 
   });
 
